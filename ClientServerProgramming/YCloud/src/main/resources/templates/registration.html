@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sing in / Sing up Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/signin_up.css" >
+</head>
+<body>
+<header class="header---main">
+    <div class="container--header">
+        <div class="header__inner--main">
+            <div class="header__logo">Pet Wash Groom</div>
+            <nav class="nav">
+                <a class="nav_link" href="/main">main</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <form class="form-signin" method="post" action="/registration">
+        <h1 class="form__title">Registration</h1>
+        <div class="form__input-group">
+            <input type="text" class="form form__input"  autofocus placeholder="Name" name="name"  id="name" required>
+        </div>
+
+        <div class="form__input-group">
+            <input type="text" class="form form__input"  autofocus placeholder="Surname" name="surname" id="surname" required>
+        </div>
+        <div class="form__input-group">
+            <input type="text" id="email" name="email" class="form form__input" placeholder="Email" required>
+        </div>
+        <div class="form__input-group">
+            <input type="password" id="password" name="password" class="form form__input" placeholder="Password" required>
+        </div>
+        <div class="form__input-group">
+            <input type="password" id="repeatPassword" name="repeatPassword" class="form form__input" placeholder="Repeat Password" required>
+        </div>
+        <button class="form__button" type="submit" >Continue</button>
+        <p class="form__text">
+            <a id="linkLogin"  href="/auth/login" class="form__link">Already have an account? Sign in</a>
+        </p>
+    </form>
+</div>
+</body>
+</html>

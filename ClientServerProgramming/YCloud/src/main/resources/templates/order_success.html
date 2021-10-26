@@ -1,0 +1,34 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Order Information</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/signin_up.css" >
+    <link rel="stylesheet" href="/css/home.css" >
+
+</head>
+<body>
+<header class="header---main">
+    <div class="container--header">
+        <div class="header__inner--main">
+            <div class="header__logo">Pet Wash Groom</div>
+            <nav class="nav">
+                <a class="nav_link" href="/auth/logout">logout</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h1 class="form__title">Order Information</h1>
+    <h3>Master is : <span th:text="${masterName +' '+ masterSurname}">master name surname</span></h3>
+    <h3>Treatment is : <span th:text="${treatmentName}">treatmentName</span></h3>
+    <h3>Price is : <span th:text="${price}">price</span></h3>
+    <h3>Date : <span th:text="${date}">date</span></h3>
+    <h3>Time : <span th:text="${time}">date</span></h3>
+    <a class="order__button" href="/clients/orders" >One more order</a>
+</div>
+
+
+</body>
+</html>
