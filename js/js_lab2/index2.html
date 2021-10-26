@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    let uah = prompt("Яку суму ви хочете сконвертувати(UAH)?");
+
+    const dollar = 27;
+    const euro = 31;
+
+    let uahToDollar = Math.round(uah / dollar * 100) / 100;
+    let uahToEuro = Math.round(uah / euro * 100) / 100;
+    let dollarToEuro = Math.round(dollar / euro * 100) / 100;
+
+    alert("Сума в гривнях: " + uah + "\nСума в доларах: " + uahToDollar + "\nСума в євро: " + uahToEuro + "\nКонвертування доларів в євро: " + dollarToEuro);
+    alert("Дякую за використання нашого конвертора!");
+</script>

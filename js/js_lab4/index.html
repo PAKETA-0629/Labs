@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<script>
+
+
+    const a = 121;
+    const b = 58;
+    console.log(isBigger(a, b));
+
+
+    const c = 25;
+    const d = 36;
+    console.log(isSmaller(a, b));
+
+
+    console.log(getMin(2,-5,134,0,-34,46));
+
+
+    console.log(getClosestToZero(-2, 5, 134, -34, 1, 45));
+
+    function isBigger(a, b) {
+        return a > b;
+    }
+
+    function isSmaller(a, b) {
+        return a < b;
+    }
+
+    function getMin(...args) {
+        let min = args[0];
+
+        for (let i = 1; i < args.length; i++) {
+            if (args[i] < min) min = args[i];
+        }
+        return min;
+    }
+
+    function getClosestToZero(...args) {
+
+        let min = args[0];
+        for (let i = 1; i < args.length; i++) {
+            if (Math.abs(args[i]) < Math.abs(min)) min = args[i];
+        }
+        return min;
+    }
+</script>

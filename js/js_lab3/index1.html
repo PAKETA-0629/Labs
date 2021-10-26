@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+    let i = 0;
+    while(i++ < 4) {
+        const sh = '#';
+        const sp = ' ';
+        let str = "";
+        for (let j = 0; j < 15; j++) {
+            if (j === 7) {
+                console.log(str);
+                str = "";
+            }
+            if (j % 2 === 0) str += sh;
+            else str += sp;
+            if (j === 14) console.log(str);
+        }
+    }
+</script>

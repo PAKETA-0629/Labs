@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script>
+    alert("Введіть квадратне рівнення");
+    let array = [];
+    for (let i = 0; i < 3; i++) {
+        array[i] = prompt("Введіть " + (i + 1) + " коофіцієнт");
+    }
+    let a = array[0], b = array[1], c = array[2];
+    let D = b * b - 4 * a * c;
+    let x1, x2;
+
+    if (D > 0) {
+        x1 = (-b + Math.sqrt(D)) / (2 * a);
+        x2 = (-b - Math.sqrt(D)) / (2 * a);
+        alert("Результат: " + x1 + " " + x2)
+    } else if (D === 0) {
+        x1 = -b / (2 * a);
+        alert("Результат: " + x1)
+    } else if(D < 0) {
+        alert("Дискриминант менше 0")
+    }
+</script>
