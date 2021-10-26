@@ -1,0 +1,57 @@
+def sortprogram():
+    loop = True
+    while loop:
+        line = str(input("Введить текст: "))
+        line = line.title()
+        print("Введіть \"1\" щоб здійснити сортування тексту по буквах і \"2\" для сортування по словах або \"exit\"")
+        choise = input("Ваш вибір: ")
+        if choise == "1":
+            loop = False
+            def textsorter():
+                ENG = list("abcdefghiklmnopqrstvxyz")
+                UKR = list("абвгґдеєжзиіїйклмнопрстуфхцчшщьюя")
+                dict = {}
+                dictnew = {}
+                for elem in line:
+                    if elem in ENG or UKR:
+                        dict[elem] = line.count(elem)
+    
+                for letter in ENG:
+                    if letter in dict:
+                        dictnew.update({letter : dict.setdefault("{}".format(letter))})
+                for letter in UKR:
+                    if letter in dict:
+                        dictnew.update({letter : dict.setdefault("{}".format(letter))}) 
+    
+                for elem in dictnew:
+                   print("Кількість", elem, "у строчці -", dict[elem])
+            textsorter()
+        elif choise == "2":
+            loop = False
+            def wordcount():
+                UKR = list("абвгґдеєжзиіїйклмнопрстуфхцчшщьюя")
+                d = {}
+                words = []
+                for elem in line:
+                        if elem.isalpha():
+                            words.append(elem)
+                        else:
+                            if len(words) >=4:    
+                                d["".join(words)] = line.count("".join(words))
+                            words.clear()
+                            continue
+                if words:
+                    if len(words) >=4:   
+                        d["".join(words)] = line.count("".join(words))
+                lst = list(d.keys())
+                lst.sort()
+                for elem in lst:
+                    print("Слово", elem, "зустрічається в тексті", d[elem], "раз.")
+            wordcount()
+        elif choise == "exit":
+            loop = False
+            print("До побачення!")
+            pass
+        else:
+            print("Вибери або \"1\" або \"2\" або \"exit\".")
+sortprogram()

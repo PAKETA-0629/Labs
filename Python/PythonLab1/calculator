@@ -1,0 +1,18 @@
+def calculator():
+  print("Hello, i am smart calculator!")
+  a = float(input("Please, enter first number: "))
+  b = float(input("Please, enter second number: "))
+  operation = input("Please, choose operation: ")
+  if operation == "+":
+      print("It's your result: {}".format(a+b))
+  elif operation == "-":
+      print("It's your result: {}".format(a-b))
+  elif operation == "*":
+      print("It's your result: {}".format(a*b))
+  elif operation == "/":
+      if b == 0:
+          print("Sorry, you are fuck up this task(")
+      else:
+          print("It's your result: {}".format(a/b))
+  else:
+      print("Unknow operation, choose from: [+] [-] [*] [/]")

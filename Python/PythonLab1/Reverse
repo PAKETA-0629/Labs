@@ -1,0 +1,21 @@
+def reverse():
+
+x = list(input("Please, enter your message: "))
+x.append(" ")
+rev = list()
+res = list()
+if " " in x:
+    for i in x:
+        if (i.isalpha() or i.isdigit()):
+            rev.append(i)
+        elif (i == chr(32) or i == chr(44) or i == chr(46) or i == chr(33) or i == chr(63)):
+            rev.reverse()
+            res.append(str("".join(rev)))
+            res.append(i)
+            rev.clear()
+else:
+    for i in x:
+        res.append(i)
+    res.reverse()
+res.pop()
+print("It's your reverse message: ", "".join(res), sep="")

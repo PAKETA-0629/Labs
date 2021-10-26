@@ -1,0 +1,40 @@
+def cesar():
+
+b = list(input("Enter a message: "))
+#key = int(input("Enter a key: "))
+key = int(1)
+c = list("abcdefghijklmnopqrstuvwxyz")
+d = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+e = list("абвгґдеєжзиіїйклмнопрстуфхцчшщьюя")
+f = list("АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ")
+
+res = []
+num = []
+len_letters1 = len(c)
+len_letters2 = len(e)
+
+for i in b:
+    if i.isalpha():
+        if num:
+            res.append(str(int(''.join(num)) + key))
+            num.clear()
+        else:
+            pass
+        if i in c: 
+            res.append(c[(c.index(i)+key)%len_letters1])
+        elif i in d:
+            res.append(d[(d.index(i)+key)%len_letters1])
+        elif i in e:
+            res.append(e[(e.index(i)+key)%len_letters2])
+        elif i in f:
+            res.append(f[(f.index(i)+key)%len_letters2])
+    elif i.isdigit():
+        num.append(i)
+    else:
+        res.append(i)
+if num:
+    res.append(str(int(''.join(num)) + key))
+else:
+    pass
+
+print('Result: ', '"', ''.join(res),'"', sep = '')

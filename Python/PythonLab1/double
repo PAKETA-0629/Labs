@@ -1,0 +1,9 @@
+def double():
+    message1 = str(input("Enter your message: "))
+    message2 = str()
+    for i in message1:
+        if i == chr(32):
+            message2 += i
+        else:
+            message2 += i*2
+    print("It's your double message: {}".format(message2))
