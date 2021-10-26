@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Subject</title>
+</head>
+<body>
+<form action="#" th:action="@{/subject-update}" th:object="${subjects}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="subjectName">Subject Name</label>
+    <input type="text" th:field="*{subjectName}" id="subjectName" placeholder="Subject Name">
+    <br/>
+    <label for="hours">Hours</label>
+    <input type="text" th:field="*{hours}" id="hours" placeholder="Hours">
+    <br/>
+    <input type="submit" value="Update Subject">
+</form>
+</body>
+</html>

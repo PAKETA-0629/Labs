@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Subject</title>
+</head>
+<body>
+<form action="#" th:action="@{/subject-create}" th:object="${subject}" method="post">
+    <label for="subjectName">Subject Name</label>
+    <input type="text" th:field="*{subjectName}" id="subjectName" placeholder="Subject Name">
+    <label for="hours">Hours</label>
+    <input type="text" th:field="*{hours}" id="hours" placeholder="Hours">
+    <input type="submit" value="Create Subject">
+</form>
+</body>
+</html>

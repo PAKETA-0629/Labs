@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+
+</head>
+<body>
+
+<div th:switch="${students}">
+    <h2 th:case="null">No users found!</h2>
+    <div th:case="*">
+        <h2>Students</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>StudentID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <td th:text="${student.studentID}">
+                <td><a th:href="@{student-update/{id}(id=${student.id})}">Edit</a></td>
+                <td><a th:href="@{student-delete/{id}(id=${student.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/student-create">Create student</a></p>
+</div>
+
+<div th:switch="${teachers}">
+    <h2 th:case="null">No teachers found!</h2>
+    <div th:case="*">
+        <h2>Teachers</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>TeacherID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="teacher : ${teachers}">
+                <td th:text="${teacher.id}"></td>
+                <td th:text="${teacher.firstName}"></td>
+                <td th:text="${teacher.lastName}"></td>
+                <td th:text="${teacher.teacherID}">
+                <td><a th:href="@{teacher-update/{id}(id=${teacher.id})}">Edit</a></td>
+                <td><a th:href="@{teacher-delete/{id}(id=${teacher.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/teacher-create">Create teacher</a></p>
+
+</div>
+
+<div th:switch="${subjects}">
+    <h2 th:case="null">No subjects found!</h2>
+    <div th:case="*">
+        <h2>Subjects</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Subject name</th>
+                <th>Hours</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="subject : ${subjects}">
+                <td th:text="${subject.id}"></td>
+                <td th:text="${subject.subjectName}"></td>
+                <td th:text="${subject.hours}">
+                <td><a th:href="@{subject-update/{id}(id=${subject.id})}">Edit</a></td>
+                <td><a th:href="@{subject-delete/{id}(id=${subject.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/subject-create">Create Subject</a></p>
+</div>
+
+<form action="/lessons/select" method="post">
+    <input id = "getAllPeople" type="submit" name = "getAllPeople" value = "Get All People"/></br>
+</form>
+</br>
+<form action="/lessons/getTeacherLessons" th:object="${teacher}" method="post">
+    <label for="teacherID">TeacherID</label>
+    <input id = "teacherID" type="text" th:field="*{teacherID}" required/>
+    <input type="submit" value="Find Teacher's Lessons">
+</form>
+
+</br>
+<form action="/lessons/getStudentsMark" method="post">
+    <input type="submit" value="All Students Marks">
+</form>
+
+</body>
+</html>

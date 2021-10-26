@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Successful</h1>
+    <a href="/">Back
+    </a>
+
+    <div th:switch="${listPeople}">
+        <h2 th:case="null">No people found!</h2>
+        <div th:case="*">
+            <h2>Students And Teachers</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>LastName</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="person : ${listPeople}">
+                    <td th:text="${person.firstName}"></td>
+                    <td th:text="${person.lastName}"></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

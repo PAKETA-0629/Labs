@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Successful</h1>
+ <a href="/">Back</a>
+
+  <div th:switch="${teacherLessons}">
+      <h2 th:case="null">No lessons found!</h2>
+      <div th:case="*">
+          <h2>Lessons</h2>
+          <table>
+              <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Subject Name</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="subject : ${teacherLessons}">
+                  <th th:text="${subject.id}"></th>
+                  <td th:text="${subject.subjectName}"></td>
+
+              </tr>
+              </tbody>
+          </table>
+      </div>
+
+  </div>
+
+</body>
+</html>
