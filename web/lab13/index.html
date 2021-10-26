@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <script type="text/javascript">
+    document.write ('<table width="70%" border="1">');
+    document.write ("<\/table> ");
+
+    <!--Приховуємо JavaScript-код від старих браузерів
+      a = 5;
+    //->
+
+    area.onmousedown = function(e) { this.value += "mousedown\n";
+    this.scrollTop = this.scrollHeight; };
+  	area.onmouseup = function(e) { this.value += "mouseup\n";
+    this.scrollTop = this.scrollHeight; };
+  	area.onclick = function(e) { this.value += "click\n";
+    this.scrollTop = this.scrollHeight; };
+
+  </script>
+  <script src="myscript.js"></script>
+  <body>
+    <a href="JavaScript:alert('Attention');">Attention</a>
+    <form METHOD = post NAME = "form"
+      ACTION = "JavaScript: form.e.value = 'Натиснули кнопку: Заповнити'; void (0);">
+      <input TYPE=text NAME=e SIZE=30 VALUE=""><br>
+      <input TYPE=submit VALUE="Заповнити">
+      <input TYPE=reset VALUE="Очистити">
+    </form>
+    <form>
+      <input TYPE = button VALUE = "Кнопка" onClick = "alert ('Ви натиснули кнопку');">
+    </form>
+    <form>
+      <input TYPE = text SIZE = "& {l ()};" VALUE = "&{window.location.href};">
+    </form>
+    <image src="img.png" height=10% width=10%>
+  </body>
+</html>

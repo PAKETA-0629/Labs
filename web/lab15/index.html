@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+<body>
+
+  <h2>The function which returns the value of PI:</h2>
+  <p id="demo"></p>
+
+  <h2>For Loop</h2>
+  <p id="demo1"></p>
+
+  <h2>Exponentiation</h2>
+  <p id="demo2"></p>
+
+  <script>
+    var s ='';
+	while (s.length <10)
+	{
+		s = prompt ('Введіть прізвище та ім\'я(не менше 10 літер):','');
+	}
+	alert ('' + s + '. вітаємо на нашій web-сторінці!');
+
+
+	function myFunction() {
+    		return Math.PI;
+	}
+	document.getElementById("demo").innerHTML = myFunction();
+
+	var text = "";
+	var i;
+	for (i = 0; i < 10; i++) {
+		if (i === 3) { continue; }
+		text += "The number is " + i + "<br>";
+	}
+	document.getElementById("demo1").innerHTML = text;
+
+
+	a = prompt('Введіть степінь:','')
+	alert ('Степінь: ' + a + '');
+	for (n=1; n<=100; n++)
+	{
+		s=Math.pow(n,a);
+		if(s>5000) break;
+
+		document.write('<BR>'+n+'<sup>степінь</sup> = '+s);
+	}
+	document.getElementById("demo2").innerHTML = text1;
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+	<input type="checkbox" id="shest0">
+
+	<script>
+		var c = document.querySelector('#shest0');
+		c.onclick = function() {
+		    if (c.checked) alert( 'checkbox on' );
+		    else alert( 'checkbox off' );
+	       }
+
+		var a = prompt('Enter a first number',' ');
+		b = prompt('Enter a second number',' ');
+		operation = prompt('Operation',' ');
+
+		a = parseInt(a);
+		b = parseInt(b);
+
+		if(operation == '+'){
+			alert(a + b);
+		} else if(operation == '-'){
+			alert(a - b);
+		} else if(operation == '*'){
+			alert(a * b);
+		} else if(operation == '/'){
+			alert(a / b);
+		} else{
+			alert("Error")
+		}
+
+	</script>
+
+ </head>
+ <body>
+
+<form>
+  <p>Please select your preferred contact method:</p>
+  <div>
+    <input type="radio" id="contactChoice2"
+     name="contact" value="phone">
+    <label for="contactChoice2">Phone</label>
+
+    <input type="radio" id="contactChoice3"
+     name="contact" value="mail">
+    <label for="contactChoice3">Mail</label>
+    <input type="radio" id="contactChoice1"
+     name="contact" value="email">
+    <label for="contactChoice1">Email</label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form><br>
+
+ </body>
+</html>
